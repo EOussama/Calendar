@@ -1,4 +1,6 @@
 # Calendar
 
+[Imgur](https://i.imgur.com/CdEgGns.png)
+
 ## Description
-A very lightweighter calendar made with Javascript.
+A very lightweighted calendar made with Javascript.
