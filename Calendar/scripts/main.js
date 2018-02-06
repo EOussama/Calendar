@@ -1,7 +1,6 @@
 var monthsName = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 var monthElement = document.getElementById('monthName');
 var timeElement = document.getElementById('time');
-//var date = new Date();
 var timer;
 var date = new Date(), absDate = new Date();
 var currentIter = 0;
