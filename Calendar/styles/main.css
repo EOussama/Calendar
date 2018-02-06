@@ -1,42 +1,134 @@
+/*--------------------[Caption]------------------*/
+
+caption {
+	height: 30vh;
+	min-height: 200px;
+	max-height: 500px;
+	background-color: cadetblue;
+	background: linear-gradient(to bottom, #2e5b5c, #5b989a);
+	color: azure;
+	border: 1px solid black;
+	border-bottom: 5px solid black;
+	overflow: hidden;
+	box-shadow: inset 1px 1px 5px black, inset -1px 0px 5px black;
+}
+
+caption h1 {
+	padding: 0px;
+	margin: 0px;
+	font-size: 60px;
+	position: relative;
+	top: 35%;
+	text-shadow: 1px 1px 5px black;
+	animation-name: fade;
+	animation-duration: .5s;
+}
+
+caption h3 {
+	position: relative;
+	top: 80px;
+	font-size: 20px;
+	color: #aecdce;
+	text-shadow: .5px .5px 1px black;
+}
+
+.arrow {
+	position: relative;
+	top: 20%;
+	margin: 0px 10px;
+	z-index: 1;
+	color: #292c2c;
+	font-weight: bold;
+	font-family: consolas, sans-serif;
+	font-size: 100px;
+	cursor: pointer;
+	transition-duration: .4s;
+}
+
+#leftArrow {
+	left: 0px;
+	float: left;
+	transition-property: left, color, text-shadow;
+}
+
+#rightArrow {
+	right: 0px;
+	float: right;
+	transition-property: right, color, text-shadow;
+}
+
+.arrow:hover {
+	text-shadow: 1px 1px 2px black;
+	color: #515757;
+}
+
+#leftArrow:hover { left: -4px; }
+
+#rightArrow:hover { right: -4px; }
+
+/*-----------------------------------------------*/
+
 table {
+	width: 80%;
 	margin: auto;
 	text-align: center;
 	border-collapse: collapse;
+	border-color: black;
+	border: 2px solid black;
 	font-family: arial, sans-serif;
 	-webkit-user-select: none;
-	box-shadow: 2px 2px 3px grey;
+	box-shadow: 3px 3px 5px grey;
 }
 
 th {
 	width: 50px;
+	height: 50px;
 	padding: 5px;
 	background-color: cadetblue;
 	color: azure;
-	transition: .5s;
-	cursor: pointer;
+	font-size: 20px;
+	border-color: cadetblue;
+	border-bottom: 1px solid black;
 }
 
 td {
 	padding: 5px;
-	height: 20px;
-	transition: .5s;
+	height: 50px;
 	cursor: pointer;
+	transition-property: background-color;
+	transition-duration: .5s;
 }
 
-caption {
-	padding: 10px;
-	background-color: cadetblue;
+tr:nth-child(odd){ background-color: #e6e6e6; }
+
+td:hover { background-color: #c9d8d3; }
+
+
+
+
+
+.currentDay {
 	color: azure;
+	background-color: cadetblue;
 	font-weight: bold;
-	height: 100px;
-	vertical-align: middle;
-	padding-top: 50px;
-	font-size: 50px;
-	border: 1px solid black;
 }
 
-tr:nth-child(odd){ background-color: #e6e6e6;}
+.oor {
+	color: gray;
+	font-style: italic;
+}
 
-td:hover, th:hover{
-	background-color: #87c4b0;
+
+
+
+@media(max-width:800px) {
+	.arrow {
+		top: 30%;
+		font-size: 70px;
+	}
+}
+
+@keyframes fade {
+	from {opacity: 0; }
+	to {opacity: 100; }
 }
