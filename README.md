@@ -1,2 +1,4 @@
 # Calendar
-A simple calendar made with Javasript and love.
+
+## Description
+A very lightweighter calendar made with Javascript.
