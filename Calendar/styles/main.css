@@ -24,7 +24,7 @@ caption h1 {
 	animation-duration: .5s;
 }
 
-caption h3 {
+#time {
 	position: relative;
 	top: 80px;
 	font-size: 20px;
@@ -125,6 +125,11 @@ td:hover { background-color: #c9d8d3; }
 	.arrow {
 		top: 30%;
 		font-size: 70px;
+	}
+	
+	caption h1 {
+		top: 36%;
+		font-size: 50px;
 	}
 }
 
