@@ -20,8 +20,6 @@ caption h1 {
 	position: relative;
 	top: 35%;
 	text-shadow: 1px 1px 5px black;
-	animation-name: fade;
-	animation-duration: .5s;
 }
 
 #time {
@@ -34,7 +32,7 @@ caption h1 {
 
 .arrow {
 	position: relative;
-	top: 20%;
+	top: 23%;
 	margin: 0px 10px;
 	z-index: 1;
 	color: #292c2c;
@@ -66,11 +64,32 @@ caption h1 {
 
 #rightArrow:hover { right: -4px; }
 
+
+#settingsBtn {
+	position: relative;
+	float: right;
+	top: -120px;
+	right: 20px;
+	font-size: 45px;
+	color: #292c2c;
+	cursor: pointer;
+	transition-property: color, transform;
+	transition-duration: .5s;
+}
+
+#settingsBtn:hover {
+	color: #363e3e;
+	transform: rotate(-15deg);
+}
+
+#settingsBtn:active { color: #385252; }
+
 /*-----------------------------------------------*/
 
 table {
 	width: 80%;
 	margin: auto;
+	margin-top: 50px;
 	text-align: center;
 	border-collapse: collapse;
 	border-color: black;
@@ -131,9 +150,4 @@ td:hover { background-color: #c9d8d3; }
 		top: 36%;
 		font-size: 50px;
 	}
-}
-
-@keyframes fade {
-	from {opacity: 0; }
-	to {opacity: 100; }
 }

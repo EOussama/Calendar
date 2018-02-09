@@ -1,3 +1,4 @@
+//Variables-------------------------------------------------------------------------------------
 var 
 	timer,
 	curSet = false,
@@ -13,6 +14,7 @@ var
 	rows = table.getElementsByTagName('tr'),
 	cells;
 
+//Event handlers--------------------------------------------------------------------------------
 document.body.onload = function() {
 	timer = setInterval(function() {
 		
@@ -37,7 +39,11 @@ document.getElementById('rightArrow').addEventListener('mousedown', function (){
 	updateCal(date);
 });
 
+
+//Functions-------------------------------------------------------------------------------------
 function updateTime() {
+	
+	let tempDate = new Date();
 	
 	timeElement.innerHTML = absDate.getHours() + ":" + (absDate.getMinutes() < 10 ? '0' : '') + absDate.getMinutes() + ":" + (absDate.getSeconds() < 10 ? '0' : '') + absDate.getSeconds();
 }
@@ -45,6 +51,7 @@ function updateTime() {
 function updateCal(dt) {
 	
 	let x = 0;
+	let lastMonthDays = new Date(dt.getFullYear(), dt.getMonth(), 0);
 
 	monthElement.innerHTML = monthsName[dt.getMonth()] + " " + dt.getFullYear();
 
@@ -59,12 +66,17 @@ function updateCal(dt) {
 
 			if(i == 1)
 			{
-				if(j >= dt.getDay())
+				if(j >= dt.getDay() - 1)
 					cells[j].innerHTML = ++x;
 				
 				else
 				{
-					cells[j].innerHTML = (new Date(dt.getFullYear(), dt.getMonth(), (new Date(dt.getFullYear(), dt.getMonth(), 0)).getDate() - (new Date(dt.getFullYear(), dt.getMonth(), 1)).getDay() - j)).getDate();
+					console.log('lastMonthDays.getDate(): ' + lastMonthDays.getDate());
+					console.log('(new Date(dt.getFullYear(), dt.getMonth(), 1)).getDay(): ' + (new Date(dt.getFullYear(), dt.getMonth(), 1)).getDay());
+					console.log('j: ' + j);
+					console.log('result: ' + (lastMonthDays.getDate() - ((new Date(dt.getFullYear(), dt.getMonth(), 1)).getDay() - j - 1)));
+					console.log('------------------------------------------------------');
+					cells[j].innerHTML = lastMonthDays.getDate() - ((new Date(dt.getFullYear(), dt.getMonth(), 1)).getDay() - j - 1);
 					cells[j].classList.add('oor');
 				}
 			}
