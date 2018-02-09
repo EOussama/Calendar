@@ -1,7 +1,7 @@
 # Calendar
 
 ## Preview
-![Preview]([Imgur](https://i.imgur.com/Q9hK9jv.png)
+![Preview]([Imgur](https://i.imgur.com/Q9hK9jv.png))
 
 ## Description
 A very lightweighted calendar made with Javascript.
