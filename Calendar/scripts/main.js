@@ -9,6 +9,7 @@ var
 	monthsName = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
 var
+	modalBG = document.getElementById('modalBG'),
 	timeElement = document.getElementById('time'),
 	table = document.getElementsByTagName('table')[0],
 	rows = table.getElementsByTagName('tr'),
@@ -24,6 +25,7 @@ document.body.onload = function() {
 	}, 1000);
 	
 	updateCal(date);
+	closeModal();
 	console.info('Calendar started - ' + new Date());
 }
 
@@ -39,6 +41,18 @@ document.getElementById('rightArrow').addEventListener('mousedown', function (){
 	updateCal(date);
 });
 
+document.getElementById('settingsBtn').addEventListener('click', function () {
+	openModal();
+});
+
+document.getElementById('closeBtn').addEventListener('click', function () {
+	closeModal();
+});
+
+window.addEventListener('click', function (e) {
+	if(e.target == modalBG)
+		closeModal();
+});
 
 //Functions-------------------------------------------------------------------------------------
 function updateTime() {
@@ -66,16 +80,11 @@ function updateCal(dt) {
 
 			if(i == 1)
 			{
-				if(j >= dt.getDay() - 1)
+				if(j >= lastMonthDays.getDay() + 1)
 					cells[j].innerHTML = ++x;
 				
 				else
 				{
-					console.log('lastMonthDays.getDate(): ' + lastMonthDays.getDate());
-					console.log('(new Date(dt.getFullYear(), dt.getMonth(), 1)).getDay(): ' + (new Date(dt.getFullYear(), dt.getMonth(), 1)).getDay());
-					console.log('j: ' + j);
-					console.log('result: ' + (lastMonthDays.getDate() - ((new Date(dt.getFullYear(), dt.getMonth(), 1)).getDay() - j - 1)));
-					console.log('------------------------------------------------------');
 					cells[j].innerHTML = lastMonthDays.getDate() - ((new Date(dt.getFullYear(), dt.getMonth(), 1)).getDay() - j - 1);
 					cells[j].classList.add('oor');
 				}
@@ -107,4 +116,14 @@ function updateCal(dt) {
 				cells[j].classList.remove('currentDay');
 		}
 	}
+}
+	
+function openModal() {
+	modalBG.style.display = 'block';
+	table.style.filter = 'blur(5px)';
+}
+	
+function closeModal() {
+	modalBG.style.display = 'none';
+	table.style.filter = 'blur(0px)';
 }

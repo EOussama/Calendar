@@ -79,12 +79,14 @@ caption h1 {
 
 #settingsBtn:hover {
 	color: #363e3e;
-	transform: rotate(-15deg);
+	transform: rotate(15deg);
 }
 
 #settingsBtn:active { color: #385252; }
 
 /*-----------------------------------------------*/
+
+/*--------------------[Table]--------------------*/
 
 table {
 	width: 80%;
@@ -97,6 +99,8 @@ table {
 	font-family: arial, sans-serif;
 	-webkit-user-select: none;
 	box-shadow: 3px 3px 5px grey;
+	transition-property: filter;
+	transition-duration: .65s;
 }
 
 th {
@@ -122,9 +126,9 @@ tr:nth-child(odd){ background-color: #e6e6e6; }
 
 td:hover { background-color: #c9d8d3; }
 
+/*-----------------------------------------------*/
 
-
-
+/*------------------[Selectors]------------------*/
 
 .currentDay {
 	color: azure;
@@ -137,7 +141,80 @@ td:hover { background-color: #c9d8d3; }
 	font-style: italic;
 }
 
+/*-----------------------------------------------*/
 
+/*--------------------[Modal]--------------------*/
+
+#modalBG {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	display: none;
+	z-index: 2;
+	width: 100%;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.85);
+	animation-name: fade;
+	transition-property: display;
+	transition-duration: .5s;
+	animation-duration: .5s;
+	animation-timing-function: ease-in-out;
+}
+
+#modalBox {
+	position: relative;
+	top: 15%;
+	left: 0px;
+	height: 350px;
+	width: 500px;
+	margin: auto;
+	background-color: azure;
+	border: 5px solid cadetblue;
+	border-radius: 5px;
+	box-shadow: 4px 4px 10px black;
+	box-shadow: inset .1px .1px 5px black;
+}
+
+#closeBtn {
+	position: relative;
+	top: 5px;
+	left: 470px;
+	color: cadetblue;
+	font-size: 30px;
+	cursor: pointer;
+	transition-property: color;
+	transition-duration: .4s;
+	z-index: 3;
+}
+
+#closeBtn:hover { color: #82c2c4; }
+
+#closeBtn:active { color: #9ed0d1; }
+
+#modalBox h3 {
+	position: relative;
+	top: -25px;
+	left: 10px;
+	color: cadetblue;
+	font-family: arial;
+	font-size: 30px;
+	margin: 0px;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	-moz-user-select: none;
+}
+
+#modalBox hr {
+	position: relative;
+	top: -25px;
+	left: 0px;
+	border: none;
+	border-top: 3px solid cadetblue;
+	background-color: cadetblue;
+}
+
+/*-----------------------------------------------*/
 
 
 @media(max-width:800px) {
@@ -150,4 +227,9 @@ td:hover { background-color: #c9d8d3; }
 		top: 36%;
 		font-size: 50px;
 	}
+}
+
+@keyframes fade {
+	from { opacity: 0; }
+	to { opacity: 100; }
 }
