@@ -10,8 +10,9 @@ A very lightweighted calendar made with Javascript and love, a project that will
 - [X] Annual calendar with time coverage.
 - [X] Flat design and animation.
 - [X] Responsible design.
+- [X] Styling settings and theme control (light/dark).
+- [X] Custom themes.
 - [ ] Realtime updates.
-- [ ] Styling settings.
 - [ ] Cookie savings.
 - [ ] Setting alarms.
 - [ ] Event tracking.
