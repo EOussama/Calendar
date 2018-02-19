@@ -171,7 +171,7 @@ td:hover { background-color: #c9d8d3; }
 	background-color: azure;
 	border: 5px solid cadetblue;
 	border-radius: 5px;
-	box-shadow: 4px 4px 10px black;
+	box-shadow: 5px 5px 10px black;
 	box-shadow: inset .1px .1px 5px black;
 }
 
@@ -203,6 +203,7 @@ td:hover { background-color: #c9d8d3; }
 	-ms-user-select: none;
 	-o-user-select: none;
 	-moz-user-select: none;
+	text-shadow: 0.5px 0.5px 1px black;
 }
 
 #modalBox hr {

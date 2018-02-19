@@ -59,11 +59,12 @@ function updateTime() {
 	
 	let tempDate = new Date();
 	
-	timeElement.innerHTML = absDate.getHours() + ":" + (absDate.getMinutes() < 10 ? '0' : '') + absDate.getMinutes() + ":" + (absDate.getSeconds() < 10 ? '0' : '') + absDate.getSeconds();
+	timeElement.innerHTML = (absDate.getHours() < 10 ? '0' : '') + absDate.getHours() + ":" + (absDate.getMinutes() < 10 ? '0' : '') + absDate.getMinutes() + ":" + (absDate.getSeconds() < 10 ? '0' : '') + absDate.getSeconds();
 }
 
 function updateCal(dt) {
-	
+
+	curSet = false;
 	let x = 0;
 	let lastMonthDays = new Date(dt.getFullYear(), dt.getMonth(), 0);
 
