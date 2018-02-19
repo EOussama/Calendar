@@ -22,10 +22,43 @@
 				<i id="closeBtn" class="fas fa-times"></i>
 				<h3>Settings</h3>
 				<hr>
+				<div id="settCont">
+					<form>
+						<div class="themeOpt">
+							<label>Light theme</label>
+							<input type="radio" name="theme" checked onclick="themeID = 1;setTheme();">
+							<div class="slider"></div>
+						</div>
+						
+						<div class="themeOpt">
+							<label>Dark theme</label>
+							<input type="radio" name="theme" onclick="themeID = 2;setTheme();">
+							<div class="slider"></div>
+						</div>
+						
+						<div class="themeOpt">
+							<label>Custom theme</label>
+							<input type="radio" name="theme" onclick="themeID = 3;setTheme();">
+							<div class="slider"></div>
+						</div>
+					</form>
+					
+					<fieldset>
+						<legend>Custom theme settings</legend>
+						
+						<label>Header text color <input type="color"></label>
+						<label>Header icons color <input type="color"></label>
+						<label>Header background color <input type="color"></label>
+						<label>Calendar days of week color <input type="color"></label>
+						<label>Calendar days of month color <input type="color"></label>
+						<label>Calendar odd rows color <input type="color"></label>
+						<label>Calendar even rows color <input type="color"></label>
+					</fieldset>
+				</div>
 			</div>
 		</div>
-        <table border="1">
-            <caption>
+        <table border="1" class="table-light-theme">
+            <caption id="capID" class="caption-light-theme">
 				<div class="arrow" id="leftArrow">&lt;</div>
 				<div class="arrow" id="rightArrow">&gt;</div>
 				<h1 id="monthName">January 2018</h1>

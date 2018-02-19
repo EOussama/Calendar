@@ -1,5 +1,6 @@
 //Variables-------------------------------------------------------------------------------------
 var 
+	themeID = 1,
 	timer,
 	curSet = false,
 	currentIter = 0,
@@ -10,7 +11,9 @@ var
 
 var
 	modalBG = document.getElementById('modalBG'),
+	modalBox = document.getElementById('modalBox'),
 	timeElement = document.getElementById('time'),
+	caption = document.getElementById('capID'),
 	table = document.getElementsByTagName('table')[0],
 	rows = table.getElementsByTagName('tr'),
 	cells;
@@ -127,4 +130,60 @@ function openModal() {
 function closeModal() {
 	modalBG.style.display = 'none';
 	table.style.filter = 'blur(0px)';
+}
+
+function setTheme() {
+	switch(themeID)
+	{
+		// Light theme
+		case 1:
+		{
+			if(table.classList.contains('table-dark-theme')) table.classList.remove('table-dark-theme');
+			if(table.classList.contains('table-custom-theme')) table.classList.remove('table-custom-theme');
+			
+			if(caption.classList.contains('caption-dark-theme')) caption.classList.remove('caption-dark-theme');
+			if(caption.classList.contains('caption-custom-theme')) caption.classList.remove('caption-custom-theme');
+			
+			table.classList.add('table-light-theme');
+			caption.classList.add('caption-light-theme');
+			
+			modalBox.style.height = '320px';
+			
+			break;
+		}
+		
+		// Dark theme
+		case 2:
+		{
+			if(table.classList.contains('table-light-theme')) table.classList.remove('table-light-theme');
+			if(table.classList.contains('table-custom-theme')) table.classList.remove('table-custom-theme');
+			
+			if(caption.classList.contains('caption-light-theme')) caption.classList.remove('caption-light-theme');
+			if(caption.classList.contains('caption-custom-theme')) caption.classList.remove('caption-custom-theme');
+			
+			table.classList.add('table-dark-theme');
+			caption.classList.add('caption-dark-theme');
+			
+			modalBox.style.height = '320px';
+			
+			break;
+		}
+		
+		// Custom theme
+		case 3:
+		{
+			if(table.classList.contains('table-light-theme')) table.classList.remove('table-light-theme');
+			if(table.classList.contains('table-dark-theme')) table.classList.remove('table-dark-theme');
+			
+			if(caption.classList.contains('caption-light-theme')) caption.classList.remove('caption-light-theme');
+			if(caption.classList.contains('caption-dark-theme')) caption.classList.remove('caption-dark-theme');
+			
+			table.classList.add('table-custom-theme');
+			caption.classList.add('caption-custom-theme');
+			
+			modalBox.style.height = '450px';
+			
+			break;
+		}
+	}
 }

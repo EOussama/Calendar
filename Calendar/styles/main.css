@@ -4,9 +4,6 @@ caption {
 	height: 30vh;
 	min-height: 200px;
 	max-height: 500px;
-	background-color: cadetblue;
-	background: linear-gradient(to bottom, #2e5b5c, #5b989a);
-	color: azure;
 	border: 1px solid black;
 	border-bottom: 5px solid black;
 	overflow: hidden;
@@ -35,7 +32,6 @@ caption h1 {
 	top: 23%;
 	margin: 0px 10px;
 	z-index: 1;
-	color: #292c2c;
 	font-weight: bold;
 	font-family: consolas, sans-serif;
 	font-size: 100px;
@@ -84,6 +80,42 @@ caption h1 {
 
 #settingsBtn:active { color: #385252; }
 
+
+/*-----------------------------------------------*/
+
+/*----------------[Light Caption]----------------*/
+
+.caption-light-theme {
+	background: linear-gradient(to bottom, #2e5b5c, #5b989a);
+	color: azure;
+}
+
+.caption-light-theme #settingsBtn {
+	color: #292c2c;
+}
+
+.caption-light-theme .arrow {
+	color: #292c2c;
+}
+
+/*-----------------------------------------------*/
+
+/*-----------------[Dark Caption]----------------*/
+
+.caption-dark-theme {
+	background: linear-gradient(to bottom, #0b1314, #192829);
+	color: azure;
+}
+
+.caption-dark-theme #settingsBtn {
+	color: #a8bfbf;
+}
+
+.caption-dark-theme .arrow {
+	color: #a8bfbf;
+}
+
+
 /*-----------------------------------------------*/
 
 /*--------------------[Table]--------------------*/
@@ -94,11 +126,9 @@ table {
 	margin-top: 50px;
 	text-align: center;
 	border-collapse: collapse;
-	border-color: black;
-	border: 2px solid black;
+	box-shadow: 3px 3px 5px grey;
 	font-family: arial, sans-serif;
 	-webkit-user-select: none;
-	box-shadow: 3px 3px 5px grey;
 	transition-property: filter;
 	transition-duration: .65s;
 }
@@ -107,11 +137,8 @@ th {
 	width: 50px;
 	height: 50px;
 	padding: 5px;
-	background-color: cadetblue;
-	color: azure;
 	font-size: 20px;
-	border-color: cadetblue;
-	border-bottom: 1px solid black;
+	border-bottom: 1px solid #000000;
 }
 
 td {
@@ -122,9 +149,52 @@ td {
 	transition-duration: .5s;
 }
 
-tr:nth-child(odd){ background-color: #e6e6e6; }
+/*-----------------------------------------------*/
 
-td:hover { background-color: #c9d8d3; }
+/*--------------[Table Light Theme]--------------*/
+
+.table-light-theme {
+	border-color: black;
+	border: 2px solid black;
+	box-shadow: 3px 3px 5px grey;
+}
+
+.table-light-theme th {
+	background-color: cadetblue;
+	color: azure;
+	border-color: cadetblue;
+}
+
+.table-light-theme tr:nth-child(odd){ background-color: #e6e6e6; }
+
+.table-light-theme td:hover { background-color: #c9d8d3; }
+
+/*-----------------------------------------------*/
+
+/*--------------[Table Dark Theme]---------------*/
+
+.table-dark-theme {
+	border-color: black;
+	border: 2px solid black;
+}
+
+.table-dark-theme th {
+	background-color: #060a0a;
+	color: azure;
+	border-color: black;
+}
+
+.table-dark-theme td {
+	color: azure;
+}
+
+.table-dark-theme tr {
+	background-color: #212d2e;
+}
+
+.table-dark-theme tr:nth-child(odd){ background-color: #1b2424; }
+
+.table-dark-theme td:hover { background-color: #c9d8d3; }
 
 /*-----------------------------------------------*/
 
@@ -139,6 +209,7 @@ td:hover { background-color: #c9d8d3; }
 .oor {
 	color: gray;
 	font-style: italic;
+	filter: blur(1px);
 }
 
 /*-----------------------------------------------*/
@@ -154,18 +225,18 @@ td:hover { background-color: #c9d8d3; }
 	width: 100%;
 	height: 100vh;
 	background-color: rgba(0, 0, 0, 0.85);
-	animation-name: fade;
 	transition-property: display;
 	transition-duration: .5s;
+	animation-name: fade;
 	animation-duration: .5s;
 	animation-timing-function: ease-in-out;
 }
 
 #modalBox {
 	position: relative;
-	top: 15%;
+	top: -10%;
 	left: 0px;
-	height: 350px;
+	height: 320px;
 	width: 500px;
 	margin: auto;
 	background-color: azure;
@@ -173,12 +244,19 @@ td:hover { background-color: #c9d8d3; }
 	border-radius: 5px;
 	box-shadow: 5px 5px 10px black;
 	box-shadow: inset .1px .1px 5px black;
+	overflow: hidden;
+	transition-property: height;
+	transition-duration: .5s;
+	animation-name: land;
+	animation-duration: .3s;
+	animation-timing-function: ease-in-out;
+	animation-fill-mode: forwards;
 }
 
 #closeBtn {
 	position: relative;
-	top: 5px;
-	left: 470px;
+	top: 10px;
+	left: 465px;
 	color: cadetblue;
 	font-size: 30px;
 	cursor: pointer;
@@ -193,7 +271,7 @@ td:hover { background-color: #c9d8d3; }
 
 #modalBox h3 {
 	position: relative;
-	top: -25px;
+	top: -23px;
 	left: 10px;
 	color: cadetblue;
 	font-family: arial;
@@ -215,8 +293,76 @@ td:hover { background-color: #c9d8d3; }
 	background-color: cadetblue;
 }
 
-/*-----------------------------------------------*/
+#settCont { margin: -20px 20px; }
 
+.themeOpt {
+	margin: 30px 0px;
+	padding: 5px;
+	font-family: arial, sans-serif;
+	font-weight: bold;
+	color: cadetblue;
+}
+
+#modalBox .themeOpt input[type="radio"] {
+	position: absolute;
+	left: 171px;
+	width: 40px;
+	height: 21px;
+	z-index: 1;
+	transform: translate(0px, -5px);
+	cursor: pointer;
+	opacity: 0;
+}
+
+#modalBox .themeOpt .slider {
+	position: relative;
+	left: 150px;
+	top: -23px;
+	height: 24px;
+	width: 42px;
+	background-color: #cde3e3;
+	border-radius: 10px;
+	transition-property: background-color;
+	transition-duration: .5s;
+}
+
+.slider::before {
+	position: absolute;
+	content: "";
+	height: 20px;
+	width: 20px;
+	transform: translate(2px, 2px);
+	background-color: #aecdce;
+	border-radius: 10px;
+	transition-property: background-color, transform;
+	transition-duration: .5s;
+}
+
+#modalBox .themeOpt input[type="radio"]:checked + .slider {  
+	background-color: cadetblue;
+}
+
+#modalBox .themeOpt input[type="radio"]:checked + .slider::before {  
+	transform: translate(20px, 2px);
+	background-color: #aecdce;
+}
+
+#modalBox fieldset {
+	position: relative;
+	top: -8px;
+	height: 90px;
+	border: 2px solid cadetblue;
+	border-radius: 5px;
+}
+
+#modalBox fieldset legend {
+	color: cadetblue;
+	font-weight: bold;
+	font-family: arial;
+	font-size: 12px;
+}
+
+/*-----------------------------------------------*/
 
 @media(max-width:800px) {
 	.arrow {
@@ -230,7 +376,14 @@ td:hover { background-color: #c9d8d3; }
 	}
 }
 
+/*------------------[Animations]-----------------*/
+
 @keyframes fade {
 	from { opacity: 0; }
 	to { opacity: 100; }
+}
+
+@keyframes land {
+	from { top: -50%; }
+	to { top: 15%; }
 }
