@@ -321,7 +321,8 @@ td {
 	height: 24px;
 	width: 42px;
 	background-color: #cde3e3;
-	border-radius: 10px;
+	border: 1px solid rgba(84, 110, 111, 0.3);
+	border-radius: 12px;
 	transition-property: background-color;
 	transition-duration: .5s;
 }
@@ -334,6 +335,7 @@ td {
 	transform: translate(2px, 2px);
 	background-color: #aecdce;
 	border-radius: 10px;
+	box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
 	transition-property: background-color, transform;
 	transition-duration: .5s;
 }
