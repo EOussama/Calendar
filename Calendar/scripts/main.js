@@ -5,7 +5,7 @@ var
 	curSet = false,
 	currentIter = 0,
 	date = new Date(),
-	absDate = new Date();
+	absDate = new Date(),
 	monthElement = document.getElementById('monthName'),
 	monthsName = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
@@ -84,7 +84,7 @@ function updateCal(dt) {
 
 			if(i == 1)
 			{
-				if(j >= lastMonthDays.getDay() + 1)
+				if(lastMonthDays.getDay() == 6 || j >= lastMonthDays.getDay() + 1)
 					cells[j].innerHTML = ++x;
 				
 				else
@@ -138,6 +138,8 @@ function setTheme() {
 		// Light theme
 		case 1:
 		{
+			clearStyling();
+			
 			if(table.classList.contains('table-dark-theme')) table.classList.remove('table-dark-theme');
 			if(table.classList.contains('table-custom-theme')) table.classList.remove('table-custom-theme');
 			
@@ -147,14 +149,14 @@ function setTheme() {
 			table.classList.add('table-light-theme');
 			caption.classList.add('caption-light-theme');
 			
-			modalBox.style.height = '320px';
-			
 			break;
 		}
 		
 		// Dark theme
 		case 2:
 		{
+			clearStyling();
+			
 			if(table.classList.contains('table-light-theme')) table.classList.remove('table-light-theme');
 			if(table.classList.contains('table-custom-theme')) table.classList.remove('table-custom-theme');
 			
@@ -164,26 +166,14 @@ function setTheme() {
 			table.classList.add('table-dark-theme');
 			caption.classList.add('caption-dark-theme');
 			
-			modalBox.style.height = '320px';
-			
-			break;
-		}
-		
-		// Custom theme
-		case 3:
-		{
-			if(table.classList.contains('table-light-theme')) table.classList.remove('table-light-theme');
-			if(table.classList.contains('table-dark-theme')) table.classList.remove('table-dark-theme');
-			
-			if(caption.classList.contains('caption-light-theme')) caption.classList.remove('caption-light-theme');
-			if(caption.classList.contains('caption-dark-theme')) caption.classList.remove('caption-dark-theme');
-			
-			table.classList.add('table-custom-theme');
-			caption.classList.add('caption-custom-theme');
-			
-			modalBox.style.height = '450px';
-			
 			break;
 		}
 	}
+}
+
+function showASetts() {
+	if(modalBox.style.height === '490px')
+		modalBox.style.height = '320px';
+	else
+		modalBox.style.height = '490px';
 }

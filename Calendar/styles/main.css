@@ -236,7 +236,7 @@ td {
 	position: relative;
 	top: -10%;
 	left: 0px;
-	height: 320px;
+	height: 318px;
 	width: 500px;
 	margin: auto;
 	background-color: azure;
@@ -303,7 +303,7 @@ td {
 	color: cadetblue;
 }
 
-#modalBox .themeOpt input[type="radio"] {
+#modalBox .themeOpt input {
 	position: absolute;
 	left: 171px;
 	width: 40px;
@@ -340,11 +340,11 @@ td {
 	transition-duration: .5s;
 }
 
-#modalBox .themeOpt input[type="radio"]:checked + .slider {  
+#modalBox .themeOpt input:checked + .slider {  
 	background-color: cadetblue;
 }
 
-#modalBox .themeOpt input[type="radio"]:checked + .slider::before {  
+#modalBox .themeOpt input:checked + .slider::before {  
 	transform: translate(20px, 2px);
 	background-color: #aecdce;
 }
@@ -352,7 +352,7 @@ td {
 #modalBox fieldset {
 	position: relative;
 	top: -8px;
-	height: 90px;
+	height: 120px;
 	border: 2px solid cadetblue;
 	border-radius: 5px;
 }
@@ -363,6 +363,28 @@ td {
 	font-family: arial;
 	font-size: 12px;
 }
+
+#modalBox #flexSetts {
+	font-family: "Arial", sans-serif;
+	font-size: 11px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+#modalBox #flexSetts input[type="color"] {
+	margin-left: 5px;
+	width: 40px;
+	height: 25px;
+	padding: 0px;
+	border: none;
+	cursor: pointer;
+	transition-property: width;
+	transition-duration: .3s;
+}
+
+#modalBox #flexSetts input[type="color"]:hover { width: 45px; }
 
 /*-----------------------------------------------*/
 
