@@ -6,12 +6,12 @@ var
 	currentIter = 0,
 	date = new Date(),
 	absDate = new Date(),
-	monthElement = document.getElementById('monthName'),
 	monthsName = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
 var
 	modalBG = document.getElementById('modalBG'),
 	modalBox = document.getElementById('modalBox'),
+	monthElement = document.getElementById('monthName'),
 	timeElement = document.getElementById('time'),
 	caption = document.getElementById('capID'),
 	table = document.getElementsByTagName('table')[0],
@@ -138,8 +138,6 @@ function setTheme() {
 		// Light theme
 		case 1:
 		{
-			clearStyling();
-			
 			if(table.classList.contains('table-dark-theme')) table.classList.remove('table-dark-theme');
 			if(table.classList.contains('table-custom-theme')) table.classList.remove('table-custom-theme');
 			
@@ -155,8 +153,6 @@ function setTheme() {
 		// Dark theme
 		case 2:
 		{
-			clearStyling();
-			
 			if(table.classList.contains('table-light-theme')) table.classList.remove('table-light-theme');
 			if(table.classList.contains('table-custom-theme')) table.classList.remove('table-custom-theme');
 			
