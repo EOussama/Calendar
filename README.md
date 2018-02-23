@@ -1,7 +1,7 @@
 # Calendar
 
 ## Preview
-![Preview](https://i.imgur.com/8dNJdos.png)
+![Imgur](https://i.imgur.com/X7bGmJB.png)
 
 ## Description
 A very lightweighted calendar made with **Javascript** and **love**, a project that will include fully controlable aspects, such as styling, setting alarms, marking events and so on.
