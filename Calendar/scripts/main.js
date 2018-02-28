@@ -111,7 +111,7 @@ function updateCal(dt) {
 			else
 				cells[j].innerHTML = ++x;
 
-			if(cells[j].innerText == dt.getDate() && dt.getMonth() == absDate.getMonth() && dt.getFullYear() == absDate.getFullYear() && curSet == false)
+			if(cells[j].innerText == dt.getDate() && dt.getMonth() == absDate.getMonth() && dt.getFullYear() == absDate.getFullYear() && curSet == false && i > 2)
 			{
 				cells[j].classList.add('currentDay');
 				curSet = true;
