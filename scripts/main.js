@@ -1,14 +1,6 @@
 //Variables-------------------------------------------------------------------------------------
-var 
-	themeID = 1,
-	timer,
-	curSet = false,
-	currentIter = 0,
-	date = new Date(),
-	absDate = new Date(),
-	monthsName = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-
-var
+const 
+	monthsName = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
 	modalBG = document.getElementById('modalBG'),
 	modalBox = document.getElementById('modalBox'),
 	monthElement = document.getElementById('monthName'),
@@ -16,12 +8,49 @@ var
 	caption = document.getElementById('capID'),
 	table = document.getElementsByTagName('table')[0],
 	rows = table.getElementsByTagName('tr'),
+	lightTheme = document.getElementById('lightTheme'),
+	darkTheme = document.getElementById('darkTheme'),
+	autoTheme = document.getElementById('autoTheme'),
+	facts = document.getElementById('facts');
+
+var 
+	config = {theme : "light"},
+	themeID = 1,
+	timer,
+	curSet = false,
+	currentIter = 0,
+	date = new Date(),
+	absDate = new Date(),
 	cells;
+	
 
 //Event handlers--------------------------------------------------------------------------------
-document.body.onload = function() {
+document.body.onload = function() { "use strict";
+	
+	loadConfig();
+								   
+	switch(config.theme) {
+		case 'light': {
+			themeID = 1;
+			setTheme();
+
+			break;
+		}
+		case 'dark': {
+			themeID = 2;
+			setTheme();
+
+			break;
+		}
+		case 'auto': {
+			themeID = 3;
+			setTheme();
+
+			break;
+		}
+	}
+	
 	timer = setInterval(function() {
-		
 		absDate = new Date();
 		updateTime();
 		
@@ -147,6 +176,9 @@ function setTheme() {
 			table.classList.add('table-light-theme');
 			caption.classList.add('caption-light-theme');
 			
+			darkTheme.checked = autoTheme.checked = !(lightTheme.checked = true);
+			config.theme = "light";
+			
 			break;
 		}
 		
@@ -162,14 +194,44 @@ function setTheme() {
 			table.classList.add('table-dark-theme');
 			caption.classList.add('caption-dark-theme');
 			
+			lightTheme.checked = autoTheme.checked = !(darkTheme.checked = true);
+			config.theme = "dark";
+			
 			break;
 		}
+		
+		// Auto theme
+		case 3: {
+			let time = new Date().getHours();
+			if(time < 20) {
+				themeID = 1;
+				setTheme();
+			}
+			else {
+				themeID = 2;
+				setTheme();
+			}
+			
+			darkTheme.checked = lightTheme.checked = !(autoTheme.checked = true);
+			config.theme = "auto";
+		}
 	}
+	
+	saveConfig();
 }
 
 function showASetts() {
 	if(modalBox.style.height === '490px')
 		modalBox.style.height = '320px';
 	else
-		modalBox.style.height = '490px';
+		modalBox.style.height = '410px';
+}
+
+function saveConfig() {
+	localStorage.setItem('config', JSON.stringify(config));
+}
+
+function loadConfig() {
+	if(localStorage.getItem('config') != null)
+		config = JSON.parse(localStorage.getItem('config'));
 }

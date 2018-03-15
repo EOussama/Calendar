@@ -26,13 +26,13 @@
 					<form>
 						<div class="themeOpt">
 							<label>Light theme</label>
-							<input type="radio" name="theme" checked onclick="themeID = 1;setTheme();">
+							<input type="radio" name="theme" checked onclick="themeID = 1;setTheme();" id="lightTheme">
 							<div class="slider"></div>
 						</div>
 						
 						<div class="themeOpt">
 							<label>Dark theme</label>
-							<input type="radio" name="theme" onclick="themeID = 2;setTheme();">
+							<input type="radio" name="theme" onclick="themeID = 2;setTheme();" id="darkTheme">
 							<div class="slider"></div>
 						</div>
 						
@@ -41,8 +41,13 @@
 							<input type="checkbox" name="advanced" onclick="showASetts();">
 							<div class="slider"></div>
 						</div>
+						
+						<div class="themeOpt">
+							<label>Auto theme</label>
+							<input type="checkbox" id="autoTheme" onclick="themeID = 3;setTheme();" id="darkTheme">
+							<div class="slider"></div>
+						</div>
 					</form>
-					
 				</div>
 			</div>
 		</div>
