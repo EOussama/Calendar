@@ -1,0 +1,47 @@
+/**
+*
+* @name:       Calendar
+* @version:    0.1.0
+* @author:     EOussama
+* @license     Apache-2.0
+* @source:     https://github.com/EOussama/Calendar
+* 
+* The light theme stylesheet of the app.
+*/
+
+/* #region Caption */
+
+.caption-light-theme {
+	background: linear-gradient(to bottom, #2e5b5c, #5b989a);
+	color: azure;
+}
+
+.caption-light-theme #settingsBtn {
+	color: #292c2c;
+}
+
+.caption-light-theme .arrow {
+	color: #292c2c;
+}
+
+/* #endregion */
+
+/* #region Table */
+
+.table-light-theme {
+	border-color: black;
+	border: 2px solid black;
+	box-shadow: 3px 3px 5px grey;
+}
+
+.table-light-theme th {
+	background-color: cadetblue;
+	color: azure;
+	border-color: cadetblue;
+}
+
+.table-light-theme tr:nth-child(odd){ background-color: #e6e6e6; }
+
+.table-light-theme td:hover { background-color: #c9d8d3; }
+
+/* #endregion */

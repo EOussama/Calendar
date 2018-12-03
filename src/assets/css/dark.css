@@ -1,0 +1,54 @@
+/**
+*
+* @name:       Calendar
+* @version:    0.1.0
+* @author:     EOussama
+* @license     Apache-2.0
+* @source:     https://github.com/EOussama/Calendar
+* 
+* The dark theme stylesheet of the app.
+*/
+
+/* #region Caption */
+
+.caption-dark-theme {
+	background: linear-gradient(to bottom, #0b1314, #192829);
+	color: azure;
+}
+
+.caption-dark-theme #settingsBtn {
+	color: #a8bfbf;
+}
+
+.caption-dark-theme .arrow {
+	color: #a8bfbf;
+}
+
+/* #endregion */
+
+/* #region Table */
+
+.table-dark-theme {
+	border-color: black;
+	border: 2px solid black;
+}
+
+.table-dark-theme th {
+	background-color: #060a0a;
+	color: azure;
+	border-color: black;
+}
+
+.table-dark-theme td {
+	color: azure;
+}
+
+.table-dark-theme tr {
+	background-color: #212d2e;
+}
+
+.table-dark-theme tr:nth-child(odd){ background-color: #1b2424; }
+
+.table-dark-theme td:hover { background-color: #c9d8d3; }
+
+/* #endregion */

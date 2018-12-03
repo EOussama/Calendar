@@ -1,3 +1,33 @@
+/**
+*
+* @name:       Calendar
+* @version:    0.1.0
+* @author:     EOussama
+* @license     Apache-2.0
+* @source:     https://github.com/EOussama/Calendar
+* 
+* The main javascript file of the app.
+*/
+
+window.addEventListener('load', () => {
+    const rowContainer = document.getElementsByTagName('tbody')[0];
+    // Generating the calendar's rows.
+    (() => {
+        for (let i in [...Array(5)]) {
+            const row = document.createElement('tr');
+
+            for (let j in [...Array(7)]) {
+                const column = document.createElement('td');
+
+                column.textContent = (parseInt(j) + 1) + (parseInt(i) * 7);
+                row.appendChild(column);
+            }
+            
+            rowContainer.appendChild(row);
+        }
+    })();
+});
+/*
 //Variables-------------------------------------------------------------------------------------
 const 
 	monthsName = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
@@ -234,4 +264,4 @@ function saveConfig() {
 function loadConfig() {
 	if(localStorage.getItem('config') != null)
 		config = JSON.parse(localStorage.getItem('config'));
-}
+}*/

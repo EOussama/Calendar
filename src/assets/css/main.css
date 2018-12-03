@@ -1,124 +1,89 @@
-/*--------------------[Caption]------------------*/
+/**
+*
+* @name:       Calendar
+* @version:    0.1.0
+* @author:     EOussama
+* @license     Apache-2.0
+* @source:     https://github.com/EOussama/Calendar
+* 
+* The main stylesheet of the app.
+*/
+
+:root {
+    --color-dark: #20222c;
+    --color-gray: #aaaaaa;
+    --color-light: #dddddd;
+}
+
+body {
+    color: var(--color-dark);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* #region Caption */
 
 caption {
-	height: 30vh;
-	min-height: 200px;
-	max-height: 500px;
-	border: 1px solid black;
 	border-bottom: 5px solid black;
+    box-shadow: 2px 1px 1px var(--color-light);
+	border: 1px solid var(--color-light);
+    height: 300px;
 	overflow: hidden;
-	box-shadow: inset 1px 1px 5px black, inset -1px 0px 5px black;
+    position: relative;
 }
 
-caption h1 {
-	padding: 0px;
-	margin: 0px;
+caption #month-year {
 	font-size: 60px;
-	position: relative;
-	top: 35%;
-	text-shadow: 1px 1px 5px black;
+	text-shadow: 1px 2px 1px var(--color-light);
 }
 
-#time {
-	position: relative;
-	top: 80px;
+caption #time {
 	font-size: 20px;
-	color: #aecdce;
-	text-shadow: .5px .5px 1px black;
+	color: var(--color-gray);
+	text-shadow: .5px 1px 1px var(--color-light);
 }
 
-.arrow {
-	position: relative;
-	top: 23%;
-	margin: 0px 10px;
-	z-index: 1;
-	font-weight: bold;
+caption .arrow {
+	cursor: pointer;
 	font-family: consolas, sans-serif;
-	font-size: 100px;
+    font-size: 80px;
+    opacity: .3;
+	position: absolute;
+    top: 50%;
+    transition-duration: .3s;
+    transition-property: color, opacity;
+}
+
+caption .arrow:hover {
+    opacity: .5;
+}
+
+caption #left-arrow {
+	left: 10px;
+}
+
+caption #right-arrow {
+	right: 10px;
+}
+
+caption #settings-btn {
 	cursor: pointer;
-	transition-duration: .4s;
+	top: 10px;
+	right: 10px;
+    font-size: 40px;
+    opacity: .3;
+	position: absolute;
+	transition-property: opacity, transform;
+	transition-duration: .3s;
 }
 
-#leftArrow {
-	left: 0px;
-	float: left;
-	transition-property: left, color, text-shadow;
+caption #settings-btn:hover {
+	opacity: .5;
+	transform: rotate(10deg);
 }
 
-#rightArrow {
-	right: 0px;
-	float: right;
-	transition-property: right, color, text-shadow;
-}
+/* #endregion */
 
-.arrow:hover {
-	text-shadow: 1px 1px 2px black;
-	color: #515757;
-}
-
-#leftArrow:hover { left: -4px; }
-
-#rightArrow:hover { right: -4px; }
-
-
-#settingsBtn {
-	position: relative;
-	float: right;
-	top: -120px;
-	right: 20px;
-	font-size: 45px;
-	color: #292c2c;
-	cursor: pointer;
-	transition-property: color, transform;
-	transition-duration: .5s;
-}
-
-#settingsBtn:hover {
-	color: #363e3e;
-	transform: rotate(15deg);
-}
-
-#settingsBtn:active { color: #385252; }
-
-
-/*-----------------------------------------------*/
-
-/*----------------[Light Caption]----------------*/
-
-.caption-light-theme {
-	background: linear-gradient(to bottom, #2e5b5c, #5b989a);
-	color: azure;
-}
-
-.caption-light-theme #settingsBtn {
-	color: #292c2c;
-}
-
-.caption-light-theme .arrow {
-	color: #292c2c;
-}
-
-/*-----------------------------------------------*/
-
-/*-----------------[Dark Caption]----------------*/
-
-.caption-dark-theme {
-	background: linear-gradient(to bottom, #0b1314, #192829);
-	color: azure;
-}
-
-.caption-dark-theme #settingsBtn {
-	color: #a8bfbf;
-}
-
-.caption-dark-theme .arrow {
-	color: #a8bfbf;
-}
-
-
-/*-----------------------------------------------*/
-
-/*--------------------[Table]--------------------*/
+/* #region Table */
 
 table {
 	width: 80%;
@@ -149,56 +114,9 @@ td {
 	transition-duration: .5s;
 }
 
-/*-----------------------------------------------*/
+/* #endregion */
 
-/*--------------[Table Light Theme]--------------*/
-
-.table-light-theme {
-	border-color: black;
-	border: 2px solid black;
-	box-shadow: 3px 3px 5px grey;
-}
-
-.table-light-theme th {
-	background-color: cadetblue;
-	color: azure;
-	border-color: cadetblue;
-}
-
-.table-light-theme tr:nth-child(odd){ background-color: #e6e6e6; }
-
-.table-light-theme td:hover { background-color: #c9d8d3; }
-
-/*-----------------------------------------------*/
-
-/*--------------[Table Dark Theme]---------------*/
-
-.table-dark-theme {
-	border-color: black;
-	border: 2px solid black;
-}
-
-.table-dark-theme th {
-	background-color: #060a0a;
-	color: azure;
-	border-color: black;
-}
-
-.table-dark-theme td {
-	color: azure;
-}
-
-.table-dark-theme tr {
-	background-color: #212d2e;
-}
-
-.table-dark-theme tr:nth-child(odd){ background-color: #1b2424; }
-
-.table-dark-theme td:hover { background-color: #c9d8d3; }
-
-/*-----------------------------------------------*/
-
-/*------------------[Selectors]------------------*/
+/* #region Selectors */
 
 .currentDay {
 	color: azure;
@@ -212,9 +130,9 @@ td {
 	filter: blur(1px);
 }
 
-/*-----------------------------------------------*/
+/* #endregion */
 
-/*--------------------[Modal]--------------------*/
+/* #region Modal */
 
 #modalBG {
 	position: absolute;
@@ -386,7 +304,7 @@ td {
 
 #modalBox #flexSetts input[type="color"]:hover { width: 45px; }
 
-/*-----------------------------------------------*/
+/* #endregion */
 
 @media(max-width:800px) {
 	.arrow {
@@ -399,8 +317,6 @@ td {
 		font-size: 50px;
 	}
 }
-
-/*------------------[Animations]-----------------*/
 
 @keyframes fade {
 	from { opacity: 0; }
