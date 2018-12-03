@@ -31,12 +31,24 @@ caption {
     position: relative;
 }
 
+caption #caption-lables {
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 80%;
+}
+
 caption #month-year {
+    margin: 0 0 30px 0;
 	font-size: 60px;
 	text-shadow: 1px 2px 1px var(--color-light);
 }
 
 caption #time {
+    margin: 0;
 	font-size: 20px;
 	color: var(--color-gray);
 	text-shadow: .5px 1px 1px var(--color-light);
@@ -49,6 +61,7 @@ caption .arrow {
     opacity: .3;
 	position: absolute;
     top: 50%;
+    transform: translateY(-50%);
     transition-duration: .3s;
     transition-property: color, opacity;
 }
