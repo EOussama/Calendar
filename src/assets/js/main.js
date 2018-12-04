@@ -38,11 +38,22 @@ window.addEventListener('load', () => {
                 // Affecting text to the column.
 				if (dayOnCalendar <= 0) {
 					dayOnCalendar = lastDayOfLastMonth - ((dayOfWeekOfFirstDayOfMonth * (i + 1)) - j - 1);
+
+					// Adding style to the days out of range of the focused month.
+					column.classList.add('out-of-range');
 				} else if (dayOnCalendar > lastDayOfCurrentMonth) {
 					dayOnCalendar = j - dayOfWeekOfLastDayOfMonth + 1;
+
+					// Adding style to the days out of range of the focused month.
+					column.classList.add('out-of-range');
 				}
 
 				column.textContent = Math.abs(dayOnCalendar);
+
+				// Adding a highlight to the current day.
+				if (dayOnCalendar == curDate.getDate()) {
+					column.classList.add('current-day');
+				}
 
                 // Appending the column.
                 row.appendChild(column);
