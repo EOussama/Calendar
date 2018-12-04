@@ -10,7 +10,12 @@
 */
 
 window.addEventListener('load', () => {
-    const rowContainer = document.getElementsByTagName('tbody')[0];
+    const
+        rowContainer = document.getElementsByTagName('tbody')[0],
+        modal = document.getElementById('modal-bg'),
+        settingsBtn = document.getElementById('settings-btn'),
+        closeBtn = document.getElementById('close-btn');
+
     // Generating the calendar's rows.
     (() => {
         for (let i in [...Array(5)]) {
@@ -26,6 +31,20 @@ window.addEventListener('load', () => {
             rowContainer.appendChild(row);
         }
     })();
+
+    /**
+     * The click event that opens the modal.
+     */
+    settingsBtn.addEventListener('click', () => {
+        modal.classList.add('active');
+    });
+
+    /**
+     * The click event that closes the modal.
+     */
+    closeBtn.addEventListener('click', () => {
+        modal.classList.remove('active');
+    });
 });
 /*
 //Variables-------------------------------------------------------------------------------------

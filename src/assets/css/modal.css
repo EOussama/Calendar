@@ -9,13 +9,30 @@
 * The modal stylesheet of the app.
 */
 
-#modal {
+#modal-bg {
 	animation-duration: .3s;
 	animation-name: fade;
+	background-color: var(--color-dark-light);
+	display: none;
+	content: "";
+	height: 100vh;
+	left: 0;
+	position: fixed;
+	top: 0;
+	width: 100vw;
+	z-index: 98;
+}
+
+#modal-bg.active {
+	display: block;
+}
+
+#modal {
+	animation-duration: .3s;
+	animation-name: land;
 	background-color: var(--color-light);
 	border-radius: 3px;
 	box-shadow: 2px 2px 1px var(--color-light);
-	display: block;
 	height: 350px;
 	left: 50%;
 	position: absolute;
@@ -23,17 +40,6 @@
 	transform: translate(-50%, -50%);
 	width: 550px;
 	z-index: 99;
-}
-
-#modal::before {
-	background-color: var(--color-dark-light);
-	content: "";
-	height: 100vh;
-	left: 0;
-	position: relative;
-	top: 0;
-	width: 100vw;
-	z-index: 98;
 }
 
 #modal-header {
@@ -55,8 +61,8 @@
 	opacity: .3;
 	padding: 0;
 	position: absolute;
-	right: 5px;
-	top: 0px;
+	right: 15px;
+	top: 10px;
 	transition-duration: .3s;
 	transition-property: opacity;
 }
@@ -109,7 +115,7 @@
 }
 
 .checkbox-control input:checked + .checkbox-slider {  
-	background-color: var(--color-dark-light);
+	background-color: var(--color-gray-dark);
 }
 
 .checkbox-control input:checked + .checkbox-slider::before {  
@@ -122,11 +128,19 @@
 @keyframes fade {
 	from {
 		opacity: 0;
-		top: 0;
 	}
 
 	to {
 		opacity: 100;
+	}
+}
+
+@keyframes land {
+	from {
+		top: 0;
+	}
+
+	to {
 		top: 50%;
 	}
 }

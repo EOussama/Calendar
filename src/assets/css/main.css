@@ -11,7 +11,8 @@
 
 :root {
     --color-dark: #20222c;
-    --color-dark-light: #292b35dc;
+	--color-dark-light: #292b35dc;
+	--color-gray-dark: #5f5f5f;
     --color-gray: #aaaaaa;
     --color-light: #f5f5f5;
 }

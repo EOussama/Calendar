@@ -14,7 +14,7 @@
 
         <!-- Meta data. -->
         <meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	    <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="EOussama">
         <meta name="application-name" content="Calendar">
@@ -37,42 +37,44 @@
     <body class="light">
 
         <!-- The modal. -->
-        <div id="modal">
+        <div id="modal-bg">
+            <div id="modal">
+                
+                <!-- The modals's header. -->
+                <div id="modal-header">
+                    <span id="close-btn">&times;</span>
+                    <h2 id="modal-title">Settings</h2>
+                </div>
 
-            <!-- The modals's header. -->
-            <div id="modal-header">
-                <span id="close-btn">&times;</span>
-                <h2 id="modal-title">Settings</h2>
-            </div>
-
-            <!-- The modal's content. -->
-            <div id="modal-content">
-                <div class="checkbox-control">
-                    <label for="light-theme-checkbox">Light theme
-                        <input id="light-theme-checkbox" name="theme-checkbox" type="radio">
-                        <div class="checkbox-slider"></div>
-                    </label>
-                </div>
-                
-                <div class="checkbox-control">
-                    <label for="dark-theme-checkbox">Dark theme
-                        <input id="dark-theme-checkbox" name="theme-checkbox" type="radio">
-                        <div class="checkbox-slider"></div>
-                    </label>
-                </div>
-                
-                <div class="checkbox-control">
-                    <label for="advanced-settings-checkbox">Advanced settings
-                        <input id="advanced-settings-checkbox" type="checkbox">
-                        <div class="checkbox-slider"></div>
-                    </label>
-                </div>
-                
-                <div class="checkbox-control">
-                    <label for="auto-theme-checkbox">Auto theme
-                        <input id="auto-theme-checkbox" name="theme-checkbox" type="radio">
-                        <div class="checkbox-slider"></div>
-                    </label>
+                <!-- The modal's content. -->
+                <div id="modal-content">
+                    <div class="checkbox-control">
+                        <label for="light-theme-checkbox">Light theme
+                            <input id="light-theme-checkbox" name="theme-checkbox" type="radio">
+                            <div class="checkbox-slider"></div>
+                        </label>
+                    </div>
+                    
+                    <div class="checkbox-control">
+                        <label for="dark-theme-checkbox">Dark theme
+                            <input id="dark-theme-checkbox" name="theme-checkbox" type="radio">
+                            <div class="checkbox-slider"></div>
+                        </label>
+                    </div>
+                    
+                    <div class="checkbox-control">
+                        <label for="advanced-settings-checkbox">Advanced settings
+                            <input id="advanced-settings-checkbox" type="checkbox">
+                            <div class="checkbox-slider"></div>
+                        </label>
+                    </div>
+                    
+                    <div class="checkbox-control">
+                        <label for="auto-theme-checkbox">Auto theme
+                            <input id="auto-theme-checkbox" name="theme-checkbox" type="radio">
+                            <div class="checkbox-slider"></div>
+                        </label>
+                    </div>
                 </div>
             </div>
         </div>
