@@ -9,10 +9,6 @@
 * The dark theme stylesheet of the app.
 */
 
-body.dark {
-    color: var(--color-light);
-}
-
 body.dark .current-day:not(.out-of-range) {
 	background-color: #343942;
 }
@@ -44,6 +40,7 @@ body.dark caption #time {
 body.dark table {
 	background-color: var(--color-dark);
 	border-color: var(--color-dark);
+	color: var(--color-light-dark);
 }
 
 body.dark table th {

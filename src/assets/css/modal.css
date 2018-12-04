@@ -12,7 +12,7 @@
 #modal-bg {
 	animation-duration: .3s;
 	animation-name: fade;
-	background-color: var(--color-dark-light);
+	background-color: var(--color-dark-light) !important;
 	display: none;
 	content: "";
 	height: 100vh;
@@ -30,9 +30,9 @@
 #modal {
 	animation-duration: .3s;
 	animation-name: land;
-	background-color: var(--color-light);
+	background-color: var(--color-light) !important;
 	border-radius: 3px;
-	box-shadow: 2px 2px 1px var(--color-light);
+	box-shadow: 2px 2px 1px var(--color-light) !important;
 	height: 350px;
 	left: 50%;
 	position: absolute;
@@ -43,7 +43,7 @@
 }
 
 #modal-header {
-	border-bottom: 2px solid var(--color-gray);
+	border-bottom: 2px solid var(--color-gray) !important;
 	margin-bottom: 20px;
 	padding: 20px 30px;
 	position: relative;
@@ -51,7 +51,7 @@
 
 #modal-title {
 	margin: 0;
-	color: var(--color-gray);
+	color: var(--color-gray) !important;
 }
 
 #close-btn {
@@ -88,8 +88,8 @@
 }
 
 .checkbox-slider {
-	background-color: var(--color-light);
-	border: 1px solid var(--color-gray);
+	background-color: var(--color-light) !important;
+	border: 1px solid var(--color-gray) !important;
 	border-radius: 12px;
 	cursor: pointer;
 	height: 24px;
@@ -102,7 +102,7 @@
 }
 
 .checkbox-slider::before {
-	background-color: var(--color-gray);
+	background-color: var(--color-gray) !important;
 	border-radius: 10px;
 	content: "";
 	height: 20px;
@@ -115,12 +115,12 @@
 }
 
 .checkbox-control input:checked + .checkbox-slider {  
-	background-color: var(--color-gray-dark);
+	background-color: var(--color-gray-dark) !important;
 }
 
 .checkbox-control input:checked + .checkbox-slider::before {  
 	left: 20px;
-	background-color: var(--color-dark);
+	background-color: var(--color-dark) !important;
 }
 
 /* #endregion */
