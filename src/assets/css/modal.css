@@ -10,8 +10,10 @@
 */
 
 #modal-bg {
-	animation-duration: .3s;
-	animation-name: fade;
+	-webkit-animation-duration: .3s;
+	        animation-duration: .3s;
+	-webkit-animation-name: fade;
+	        animation-name: fade;
 	background-color: var(--color-dark-light) !important;
 	display: none;
 	content: "";
@@ -28,16 +30,20 @@
 }
 
 #modal {
-	animation-duration: .3s;
-	animation-name: land;
+	-webkit-animation-duration: .3s;
+	        animation-duration: .3s;
+	-webkit-animation-name: land;
+	        animation-name: land;
 	background-color: var(--color-light) !important;
 	border-radius: 3px;
-	box-shadow: 2px 2px 1px var(--color-light) !important;
+	-webkit-box-shadow: 2px 2px 1px var(--color-light) !important;
+	        box-shadow: 2px 2px 1px var(--color-light) !important;
 	height: 350px;
 	left: 50%;
 	position: absolute;
 	top: 50%;
-	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	        transform: translate(-50%, -50%);
 	width: 550px;
 	z-index: 99;
 }
@@ -63,7 +69,9 @@
 	position: absolute;
 	right: 15px;
 	top: 10px;
-	transition-duration: .3s;
+	-webkit-transition-duration: .3s;
+	        transition-duration: .3s;
+	-webkit-transition-property: opacity;
 	transition-property: opacity;
 }
 
@@ -96,8 +104,10 @@
 	position: absolute;
 	right: 2px;
 	top: 1px;
+	-webkit-transition-property: background-color;
 	transition-property: background-color;
-	transition-duration: .3s;
+	-webkit-transition-duration: .3s;
+	        transition-duration: .3s;
 	width: 42px;
 }
 
@@ -109,8 +119,10 @@
 	left: 2px;
 	position: absolute;
 	top: 2px;
+	-webkit-transition-property: background-color, left;
 	transition-property: background-color, left;
-	transition-duration: .3s;
+	-webkit-transition-duration: .3s;
+	        transition-duration: .3s;
 	width: 20px;
 }
 
@@ -125,6 +137,16 @@
 
 /* #endregion */
 
+@-webkit-keyframes fade {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 100;
+	}
+}
+
 @keyframes fade {
 	from {
 		opacity: 0;
@@ -132,6 +154,16 @@
 
 	to {
 		opacity: 100;
+	}
+}
+
+@-webkit-keyframes land {
+	from {
+		top: 0;
+	}
+
+	to {
+		top: 50%;
 	}
 }
 

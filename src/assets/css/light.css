@@ -6,7 +6,7 @@
 * @license     Apache-2.0
 * @source:     https://github.com/EOussama/Calendar
 * 
-* The light theme stylesheet of the app.
+* The stylesheet of the modal.
 */
 
 body.light {
@@ -25,6 +25,7 @@ body.light .out-of-range {
 /* #region Caption */
 
 body.light caption {
+    background: -webkit-gradient(linear, left top, right bottom, from(#317f92), to(#39889c));
     background: linear-gradient(to bottom right, #317f92, #39889c);
 }
 

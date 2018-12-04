@@ -24,9 +24,11 @@ body.dark .out-of-range {
 /* #region Caption */
 
 body.dark caption {
+	background: -webkit-gradient(linear, left top, right bottom, from(var(--color-dark)), to(var(--color-dark-light)));
 	background: linear-gradient(to bottom right, var(--color-dark), var(--color-dark-light));
 	border-color: var(--color-dark);
-	box-shadow: 2px 1px 1px var(--color-dark-light);
+	-webkit-box-shadow: 2px 1px 1px var(--color-dark-light);
+	        box-shadow: 2px 1px 1px var(--color-dark-light);
 }
 
 body.dark caption #month-year {
@@ -46,7 +48,8 @@ body.dark caption #time {
 body.dark table {
 	background-color: var(--color-dark);
 	border-color: var(--color-dark);
-	box-shadow: 1px 2px 2px var(--color-dark-light);
+	-webkit-box-shadow: 1px 2px 2px var(--color-dark-light);
+	        box-shadow: 1px 2px 2px var(--color-dark-light);
 	color: var(--color-light-dark);
 }
 
