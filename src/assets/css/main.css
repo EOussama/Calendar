@@ -11,8 +11,9 @@
 
 :root {
     --color-dark: #20222c;
+    --color-dark-light: #292b35dc;
     --color-gray: #aaaaaa;
-    --color-light: #dddddd;
+    --color-light: #f5f5f5;
 }
 
 body {
@@ -99,244 +100,31 @@ caption #settings-btn:hover {
 /* #region Table */
 
 table {
-	width: 80%;
-	margin: auto;
+    border-collapse: collapse;
+	box-shadow: 3px 3px 5px grey;
+    margin: auto;
 	margin-top: 50px;
 	text-align: center;
-	border-collapse: collapse;
-	box-shadow: 3px 3px 5px grey;
-	font-family: arial, sans-serif;
-	-webkit-user-select: none;
 	transition-property: filter;
-	transition-duration: .65s;
+	transition-duration: .3s;
+	user-select: none;
+	width: 80%;
 }
 
-th {
+table th {
+	border-bottom: 2px solid #000000;
+    font-size: 20px;
+    height: 50px;
+	padding: 5px;
 	width: 50px;
-	height: 50px;
-	padding: 5px;
-	font-size: 20px;
-	border-bottom: 1px solid #000000;
 }
 
-td {
-	padding: 5px;
-	height: 50px;
+table td {
 	cursor: pointer;
+    height: 50px;
+	padding: 5px;
 	transition-property: background-color;
-	transition-duration: .5s;
-}
-
-/* #endregion */
-
-/* #region Selectors */
-
-.currentDay {
-	color: azure;
-	background-color: cadetblue;
-	font-weight: bold;
-}
-
-.oor {
-	color: gray;
-	font-style: italic;
-	filter: blur(1px);
-}
-
-/* #endregion */
-
-/* #region Modal */
-
-#modalBG {
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	display: none;
-	z-index: 2;
-	width: 100%;
-	height: 100vh;
-	background-color: rgba(0, 0, 0, 0.85);
-	transition-property: display;
-	transition-duration: .5s;
-	animation-name: fade;
-	animation-duration: .5s;
-	animation-timing-function: ease-in-out;
-}
-
-#modalBox {
-	position: relative;
-	top: -10%;
-	left: 0px;
-	height: 318px;
-	width: 500px;
-	margin: auto;
-	background-color: azure;
-	border: 5px solid cadetblue;
-	border-radius: 5px;
-	box-shadow: 5px 5px 10px black;
-	box-shadow: inset .1px .1px 5px black;
-	overflow: hidden;
-	transition-property: height;
-	transition-duration: .5s;
-	animation-name: land;
-	animation-duration: .3s;
-	animation-timing-function: ease-in-out;
-	animation-fill-mode: forwards;
-}
-
-#closeBtn {
-	position: relative;
-	top: 10px;
-	left: 465px;
-	color: cadetblue;
-	font-size: 30px;
-	cursor: pointer;
-	transition-property: color;
-	transition-duration: .4s;
-	z-index: 3;
-}
-
-#closeBtn:hover { color: #82c2c4; }
-
-#closeBtn:active { color: #9ed0d1; }
-
-#modalBox h3 {
-	position: relative;
-	top: -23px;
-	left: 10px;
-	color: cadetblue;
-	font-family: arial;
-	font-size: 30px;
-	margin: 0px;
-	-webkit-user-select: none;
-	-ms-user-select: none;
-	-o-user-select: none;
-	-moz-user-select: none;
-	text-shadow: 0.5px 0.5px 1px black;
-}
-
-#modalBox hr {
-	position: relative;
-	top: -25px;
-	left: 0px;
-	border: none;
-	border-top: 3px solid cadetblue;
-	background-color: cadetblue;
-}
-
-#settCont { margin: -20px 20px; }
-
-.themeOpt {
-	margin: 30px 0px;
-	padding: 5px;
-	font-family: arial, sans-serif;
-	font-weight: bold;
-	color: cadetblue;
-}
-
-#modalBox .themeOpt input {
-	position: absolute;
-	left: 171px;
-	width: 40px;
-	height: 21px;
-	z-index: 1;
-	transform: translate(0px, -5px);
-	cursor: pointer;
-	opacity: 0;
-}
-
-#modalBox .themeOpt .slider {
-	position: relative;
-	left: 150px;
-	top: -23px;
-	height: 24px;
-	width: 42px;
-	background-color: #cde3e3;
-	border: 1px solid rgba(84, 110, 111, 0.3);
-	border-radius: 12px;
-	transition-property: background-color;
-	transition-duration: .5s;
-}
-
-.slider::before {
-	position: absolute;
-	content: "";
-	height: 20px;
-	width: 20px;
-	transform: translate(2px, 2px);
-	background-color: #aecdce;
-	border-radius: 10px;
-	box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
-	transition-property: background-color, transform;
-	transition-duration: .5s;
-}
-
-#modalBox .themeOpt input:checked + .slider {  
-	background-color: cadetblue;
-}
-
-#modalBox .themeOpt input:checked + .slider::before {  
-	transform: translate(20px, 2px);
-	background-color: #aecdce;
-}
-
-#modalBox fieldset {
-	position: relative;
-	top: -8px;
-	height: 120px;
-	border: 2px solid cadetblue;
-	border-radius: 5px;
-}
-
-#modalBox fieldset legend {
-	color: cadetblue;
-	font-weight: bold;
-	font-family: arial;
-	font-size: 12px;
-}
-
-#modalBox #flexSetts {
-	font-family: "Arial", sans-serif;
-	font-size: 11px;
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: space-between;
-}
-
-#modalBox #flexSetts input[type="color"] {
-	margin-left: 5px;
-	width: 40px;
-	height: 25px;
-	padding: 0px;
-	border: none;
-	cursor: pointer;
-	transition-property: width;
 	transition-duration: .3s;
 }
 
-#modalBox #flexSetts input[type="color"]:hover { width: 45px; }
-
 /* #endregion */
-
-@media(max-width:800px) {
-	.arrow {
-		top: 30%;
-		font-size: 70px;
-	}
-	
-	caption h1 {
-		top: 36%;
-		font-size: 50px;
-	}
-}
-
-@keyframes fade {
-	from { opacity: 0; }
-	to { opacity: 100; }
-}
-
-@keyframes land {
-	from { top: -50%; }
-	to { top: 15%; }
-}

@@ -23,6 +23,7 @@
 
         <!-- The main stylesheets. -->
         <link rel="stylesheet" href="assets/css/main.css">
+        <link rel="stylesheet" href="assets/css/modal.css">
         <link rel="stylesheet" href="assets/css/light.css">
         <link rel="stylesheet" href="assets/css/dark.css">
 
@@ -36,37 +37,42 @@
     <body class="light">
 
         <!-- The modal. -->
-        <div id="modalBG">
-            <div id="modalBox">
-                <i id="closeBtn" class="fas fa-times"></i>
-                <h3>Settings</h3>
-                <hr>
-                <div id="settCont">
-                    <form>
-                        <div class="themeOpt">
-                            <label>Light theme</label>
-                            <input type="radio" name="theme" checked onclick="themeID = 1;setTheme();" id="lightTheme">
-                            <div class="slider"></div>
-                        </div>
-                        
-                        <div class="themeOpt">
-                            <label>Dark theme</label>
-                            <input type="radio" name="theme" onclick="themeID = 2;setTheme();" id="darkTheme">
-                            <div class="slider"></div>
-                        </div>
-                        
-                        <div class="themeOpt">
-                            <label>Advanced settings</label>
-                            <input type="checkbox" name="advanced" onclick="showASetts();">
-                            <div class="slider"></div>
-                        </div>
-                        
-                        <div class="themeOpt">
-                            <label>Auto theme</label>
-                            <input type="checkbox" id="autoTheme" onclick="themeID = 3;setTheme();" id="darkTheme">
-                            <div class="slider"></div>
-                        </div>
-                    </form>
+        <div id="modal">
+
+            <!-- The modals's header. -->
+            <div id="modal-header">
+                <span id="close-btn">&times;</span>
+                <h2 id="modal-title">Settings</h2>
+            </div>
+
+            <!-- The modal's content. -->
+            <div id="modal-content">
+                <div class="checkbox-control">
+                    <label for="light-theme-checkbox">Light theme
+                        <input id="light-theme-checkbox" name="theme-checkbox" type="radio">
+                        <div class="checkbox-slider"></div>
+                    </label>
+                </div>
+                
+                <div class="checkbox-control">
+                    <label for="dark-theme-checkbox">Dark theme
+                        <input id="dark-theme-checkbox" name="theme-checkbox" type="radio">
+                        <div class="checkbox-slider"></div>
+                    </label>
+                </div>
+                
+                <div class="checkbox-control">
+                    <label for="advanced-settings-checkbox">Advanced settings
+                        <input id="advanced-settings-checkbox" type="checkbox">
+                        <div class="checkbox-slider"></div>
+                    </label>
+                </div>
+                
+                <div class="checkbox-control">
+                    <label for="auto-theme-checkbox">Auto theme
+                        <input id="auto-theme-checkbox" name="theme-checkbox" type="radio">
+                        <div class="checkbox-slider"></div>
+                    </label>
                 </div>
             </div>
         </div>
@@ -75,7 +81,7 @@
         <main>
 
             <!-- The calendar. -->
-            <table>
+            <table border="true">
 
                 <!-- The caption. -->
                 <caption>

@@ -1,0 +1,128 @@
+/**
+*
+* @name:       Calendar
+* @version:    0.1.0
+* @author:     EOussama
+* @license     Apache-2.0
+* @source:     https://github.com/EOussama/Calendar
+* 
+* The modal stylesheet of the app.
+*/
+
+#modal {
+	animation-duration: .3s;
+	animation-name: fade;
+	background-color: var(--color-light);
+	border-radius: 3px;
+	box-shadow: 2px 2px 1px var(--color-light);
+	display: block;
+	height: 350px;
+	left: 50%;
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 550px;
+	z-index: 99;
+}
+
+#modal::before {
+	background-color: var(--color-dark-light);
+	content: "";
+	height: 100vh;
+	left: 0;
+	position: relative;
+	top: 0;
+	width: 100vw;
+	z-index: 98;
+}
+
+#modal-header {
+	border-bottom: 2px solid var(--color-gray);
+	margin-bottom: 20px;
+	padding: 20px 10px;
+	position: relative;
+}
+
+#modal-title {
+	margin: 0;
+	color: var(--color-gray);
+}
+
+#close-btn {
+	cursor: pointer;
+	font-size: 35px;
+	margin: 0;
+	opacity: .3;
+	padding: 0;
+	position: absolute;
+	right: 5px;
+	top: 0px;
+	transition-duration: .3s;
+	transition-property: opacity;
+}
+
+#close-btn:hover {
+	opacity: .5;
+}
+
+#modal-content {
+	padding: 30px;
+}
+
+.checkbox-control {
+	margin: 10px 0px;
+	padding: 5px;
+	font-weight: bold;
+}
+
+.checkbox-control input {
+	display: none;
+}
+
+.checkbox-control .checkbox-slider {
+	background-color: var(--color-light);
+	border: 1px solid var(--color-gray);
+	border-radius: 12px;
+	cursor: pointer;
+	height: 24px;
+	position: relative;
+	transition-property: background-color;
+	transition-duration: .3s;
+	width: 42px;
+}
+
+.checkbox-slider::before {
+	background-color: var(--color-gray);
+	border-radius: 10px;
+	content: "";
+	height: 20px;
+	left: 2px;
+	position: absolute;
+	top: 2px;
+	transition-property: background-color, left;
+	transition-duration: .3s;
+	width: 20px;
+}
+
+.checkbox-control input:checked + .checkbox-slider {  
+	background-color: var(--color-dark-light);
+}
+
+.checkbox-control input:checked + .checkbox-slider::before {  
+	left: 20px;
+	background-color: var(--color-dark);
+}
+
+/* #endregion */
+
+@keyframes fade {
+	from {
+		opacity: 0;
+		top: 0;
+	}
+
+	to {
+		opacity: 100;
+		top: 50%;
+	}
+}
