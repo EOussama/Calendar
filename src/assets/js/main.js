@@ -11,6 +11,7 @@
 
 window.addEventListener('load', () => {
     const
+        monthsName = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
         rowContainer = document.getElementsByTagName('tbody')[0],
         modal = document.getElementById('modal-bg'),
         settingsBtn = document.getElementById('settings-btn'),
@@ -24,10 +25,14 @@ window.addEventListener('load', () => {
             for (let j in [...Array(7)]) {
                 const column = document.createElement('td');
 
+                // Affecting text to the column.
                 column.textContent = (parseInt(j) + 1) + (parseInt(i) * 7);
+
+                // Appending the column.
                 row.appendChild(column);
             }
             
+            // Adding the new row.
             rowContainer.appendChild(row);
         }
     })();
@@ -49,7 +54,7 @@ window.addEventListener('load', () => {
 /*
 //Variables-------------------------------------------------------------------------------------
 const 
-	monthsName = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+	
 	modalBG = document.getElementById('modalBG'),
 	modalBox = document.getElementById('modalBox'),
 	monthElement = document.getElementById('monthName'),
