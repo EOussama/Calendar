@@ -94,5 +94,32 @@ window.addEventListener('load', () => {
      */
     closeBtn.addEventListener('click', () => {
         modal.classList.remove('active');
-    });
+	});
+	
+	/**
+	 * The change events of the checkbox controls.
+	 */
+	document.querySelectorAll('.checkbox-control').forEach(cb => {
+		cb.addEventListener('change', function() {
+			switch(this.dataset.type) {
+				case 'dark': {
+					document.body.classList.remove('light');
+					document.body.classList.add('dark');
+					break;
+				}
+				case 'light': {
+					document.body.classList.remove('dark');
+					document.body.classList.add('light');
+					break;
+				}
+
+				case 'auto': {
+					break;
+				}
+				case 'advanced': {
+					break;
+				}
+			}
+		});
+	});
 });

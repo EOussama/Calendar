@@ -9,39 +9,52 @@
 * The light theme stylesheet of the app.
 */
 
+body.light {
+    color: var(--color-dark);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body.light .current-day:not(.out-of-range) {
+	background-color: #317f924f;
+	font-weight: bold;
+}
+
+body.light .out-of-range {
+	color: var(--color-gray);
+	font-style: italic;
+}
+
 /* #region Caption */
 
-.caption-light-theme {
-	background: linear-gradient(to bottom, #2e5b5c, #5b989a);
-	color: azure;
+body.light caption {
+    background: linear-gradient(to bottom right, #317f92, #39889c);
 }
 
-.caption-light-theme #settingsBtn {
-	color: #292c2c;
+body.light caption #month-year {
+	color: var(--color-dark-light);
+	text-shadow: none;
 }
 
-.caption-light-theme .arrow {
-	color: #292c2c;
+body.light caption #time {
+	color: var(--color-light-dark);
+	text-shadow: none;
 }
 
 /* #endregion */
 
 /* #region Table */
 
-.table-light-theme {
-	border-color: black;
-	border: 2px solid black;
-	box-shadow: 3px 3px 5px grey;
+table {
+	border: 1px solid var(--color-light-dark);
+	box-shadow: 1px 2px 2px var(--color-light-dark);
 }
 
-.table-light-theme th {
-	background-color: cadetblue;
-	color: azure;
-	border-color: cadetblue;
+table th {
+	border-bottom: 2px solid var(--color-light-dark);
 }
 
-.table-light-theme tr:nth-child(odd){ background-color: #e6e6e6; }
-
-.table-light-theme td:hover { background-color: #c9d8d3; }
+table td:not(.out-of-range):hover {
+	background-color: #317f9217;
+}
 
 /* #endregion */
