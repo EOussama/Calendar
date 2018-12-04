@@ -112,11 +112,14 @@ window.addEventListener('load', () => {
 					document.body.classList.add('light');
 					break;
 				}
-
 				case 'auto': {
-					break;
-				}
-				case 'advanced': {
+					if (curDate.getHours() < 19) {
+						document.body.classList.remove('dark');
+						document.body.classList.add('light');
+					} else {
+						document.body.classList.remove('light');
+						document.body.classList.add('dark');
+					}
 					break;
 				}
 			}
