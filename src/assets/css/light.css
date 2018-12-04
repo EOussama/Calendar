@@ -16,12 +16,10 @@ body.light {
 
 body.light .current-day:not(.out-of-range) {
 	background-color: #317f924f;
-	font-weight: bold;
 }
 
 body.light .out-of-range {
 	color: var(--color-gray);
-	font-style: italic;
 }
 
 /* #region Caption */
@@ -44,16 +42,7 @@ body.light caption #time {
 
 /* #region Table */
 
-table {
-	border: 1px solid var(--color-light-dark);
-	box-shadow: 1px 2px 2px var(--color-light-dark);
-}
-
-table th {
-	border-bottom: 2px solid var(--color-light-dark);
-}
-
-table td:not(.out-of-range):hover {
+body.light table td:not(.out-of-range):hover {
 	background-color: #317f9217;
 }
 

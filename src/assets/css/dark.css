@@ -9,46 +9,57 @@
 * The dark theme stylesheet of the app.
 */
 
+body.dark {
+    color: var(--color-light);
+}
+
+body.dark .current-day:not(.out-of-range) {
+	background-color: #343942;
+}
+
+body.dark .out-of-range {
+	color: var(--color-light-dark);
+}
+
 /* #region Caption */
 
-.caption-dark-theme {
-	background: linear-gradient(to bottom, #0b1314, #192829);
-	color: azure;
+body.dark caption {
+    background: linear-gradient(to bottom right, var(--color-dark), var(--color-dark-light));
 }
 
-.caption-dark-theme #settingsBtn {
-	color: #a8bfbf;
+body.dark caption #month-year {
+	color: var(--color-light);
+	text-shadow: none;
 }
 
-.caption-dark-theme .arrow {
-	color: #a8bfbf;
+body.dark caption #time {
+	color: var(--color-light-dark);
+	text-shadow: none;
 }
 
 /* #endregion */
 
 /* #region Table */
 
-.table-dark-theme {
-	border-color: black;
-	border: 2px solid black;
+body.dark table {
+	background-color: var(--color-dark);
+	border-color: var(--color-dark);
 }
 
-.table-dark-theme th {
-	background-color: #060a0a;
-	color: azure;
-	border-color: black;
+body.dark table th {
+	border-color: var(--color-dark-light);
 }
 
-.table-dark-theme td {
-	color: azure;
+body.dark table td.out-of-range {
+	background-color: #7085a72c;
 }
 
-.table-dark-theme tr {
-	background-color: #212d2e;
+body.dark table td:not(.out-of-range) {
+	background-color: var(--color-dark-light);
 }
 
-.table-dark-theme tr:nth-child(odd){ background-color: #1b2424; }
-
-.table-dark-theme td:hover { background-color: #c9d8d3; }
+body.dark table td:not(.out-of-range):hover {
+	background-color: #2e343b;
+}
 
 /* #endregion */
