@@ -39,7 +39,7 @@
 #modal-header {
 	border-bottom: 2px solid var(--color-gray);
 	margin-bottom: 20px;
-	padding: 20px 10px;
+	padding: 20px 30px;
 	position: relative;
 }
 
@@ -70,22 +70,26 @@
 }
 
 .checkbox-control {
+	font-weight: bold;
 	margin: 10px 0px;
 	padding: 5px;
-	font-weight: bold;
+	position: relative;
+	width: 200px;
 }
 
 .checkbox-control input {
 	display: none;
 }
 
-.checkbox-control .checkbox-slider {
+.checkbox-slider {
 	background-color: var(--color-light);
 	border: 1px solid var(--color-gray);
 	border-radius: 12px;
 	cursor: pointer;
 	height: 24px;
-	position: relative;
+	position: absolute;
+	right: 2px;
+	top: 1px;
 	transition-property: background-color;
 	transition-duration: .3s;
 	width: 42px;
