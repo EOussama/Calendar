@@ -77,33 +77,6 @@ caption #time {
 	text-shadow: .5px 1px 1px var(--color-light);
 }
 
-caption .arrow {
-	cursor: pointer;
-	font-family: consolas, sans-serif;
-    font-size: 80px;
-    opacity: .3;
-	position: absolute;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
-    -webkit-transition-duration: .3s;
-            transition-duration: .3s;
-    -webkit-transition-property: color, opacity;
-    transition-property: color, opacity;
-}
-
-caption .arrow:hover {
-    opacity: .5;
-}
-
-caption #left-arrow {
-	left: 10px;
-}
-
-caption #right-arrow {
-	right: 10px;
-}
-
 caption #settings-btn {
 	cursor: pointer;
 	top: 10px;
